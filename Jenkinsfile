@@ -12,17 +12,13 @@ pipeline{
 
             }
         }
-    }
         
-    stages{
         stage('Run Tests Inside Docker'){
             steps{
                 bat '%DOCKER% run --rm python-app pytest'
 
             }
         } 
-    }
-    stages{
         stage('Run Application'){
             steps{
                 bat '%DOCKER% run --rm python-app'
